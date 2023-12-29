@@ -5,6 +5,10 @@ app = Flask(__name__)
 # 用来存储数据的全局变量
 received_data = []
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
 @app.route('/post-data', methods=['GET', 'POST'])
 def post_data():
     if request.method == 'POST':
@@ -32,4 +36,3 @@ def show_data():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-
